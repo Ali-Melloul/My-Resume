@@ -1,0 +1,199 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrap {
+  width: min(100%, var(--max-width));
+  padding-inline: clamp(1rem, 3vw, 1.5rem);
+}
+
+.site-nav .nav-inner {
+  padding: 0.9rem clamp(1rem, 3vw, 1.5rem);
+  flex-wrap: wrap;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1rem;
+  margin-left: auto;
+}
+
+.site-footer-links a {
+  word-break: break-word;
+}
+
+.hero {
+  min-height: clamp(560px, 78vh, 760px);
+  padding: clamp(3rem, 7vw, 5rem) clamp(1rem, 3vw, 1.5rem);
+}
+
+.hero-grid {
+  max-width: 100%;
+}
+
+.hero-role,
+.lead-text,
+.entry-desc,
+.project-card p,
+.intro {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.3rem);
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.project-card,
+.skill-chip,
+.contact-link {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: clamp(520px, 70vh, 660px);
+  }
+
+  .hero-cta {
+    flex-wrap: wrap;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .global-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  #globe {
+    height: min(62vh, 540px);
+  }
+}
+
+@media (max-width: 560px) {
+  .site-nav .nav-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    width: 100%;
+    margin-left: 0;
+    gap: 0.4rem 0.7rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .record-marker {
+    margin-bottom: 1rem;
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .contact-links,
+  .visit-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .skill-chip,
+  .contact-link {
+    padding: 1rem;
+  }
+
+  .timeline {
+    padding-left: 0.25rem;
+  }
+
+  .entry {
+    padding-left: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .entry::before {
+    left: 0;
+  }
+
+  .timeline::before {
+    left: 2px;
+  }
+
+  main {
+    padding: 2rem 0;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 7vw, 2.4rem);
+  }
+
+  .project-image {
+    max-height: 300px;
+  }
+
+  .global-hero,
+  .visit-list,
+  .globe-section {
+    padding-inline: 1rem;
+  }
+
+  #globe {
+    height: 420px;
+  }
+}

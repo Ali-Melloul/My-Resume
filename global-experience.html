@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Events — professional and personal journeys by Ali MELLOUL.">
+
+    <title>Events | Ali MELLOUL</title>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <link rel="stylesheet" href="src/styles/global-experience-redesign.css">
+    <link rel="stylesheet" href="src/styles/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="src/components/site-shell.js" defer></script>
+</head>
+
+<body>
+
+<div data-site-header></div>
+
+<main class="career-page">
+
+    <!-- =========================================
+         EVENTS HERO
+    ========================================== -->
+
+    <section class="career-hero reveal">
+
+        <div class="career-eyebrow">
+            <span class="eyebrow-line"></span>
+            International perspective
+        </div>
+
+        <div class="career-hero-grid">
+
+            <div class="career-hero-copy">
+
+                <h1 class="career-title">
+                    Events
+                    <span>across borders, cultures & moments.</span>
+                </h1>
+
+                <p class="career-intro">
+                    Exploring the world through professional and personal journeys.
+                </p>
+
+                <p class="career-intro">
+                    Drag to explore · Scroll or pinch to zoom · Select a highlighted country
+                </p>
+
+            </div>
+
+            <div class="career-orbit" aria-hidden="true">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-three"></div>
+
+                <div class="orbit-center">
+                    <span class="orbit-label">Global<br>Journeys</span>
+                </div>
+
+                <span class="orbit-dot dot-one"></span>
+                <span class="orbit-dot dot-two"></span>
+                <span class="orbit-dot dot-three"></span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         INTERACTIVE GLOBE
+    ========================================== -->
+
+    <section class="globe-section reveal" aria-label="Interactive globe showing visited countries">
+
+        <div class="globe-frame">
+            <div id="globe" role="application" aria-label="Interactive 3D globe. Drag to rotate, zoom with the mouse wheel, and select a highlighted country for visit details."></div>
+            <div id="status" class="status" role="status" aria-live="polite">Loading Events…</div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SELECTED JOURNEYS
+    ========================================== -->
+
+    <section class="visit-list reveal" aria-labelledby="visit-title">
+
+        <div class="visit-list-heading">
+
+            <div>
+                <span class="section-number">01</span>
+
+                <h2 id="visit-title">
+                    Places that shaped my perspective
+                </h2>
+            </div>
+
+            <p>
+                Selected journeys and events
+                from around the world.
+            </p>
+
+        </div>
+
+        <div id="visit-buttons" class="visit-buttons"></div>
+
+    </section>
+
+
+    <!-- =========================================
+         CLOSING STATEMENT
+    ========================================== -->
+
+    <section class="career-closing reveal">
+
+        <div class="closing-decoration">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <p class="closing-label">
+            The combination
+        </p>
+
+        <h2>
+            People, projects,
+            <span>and possibilities.</span>
+        </h2>
+
+        <p class="closing-text">
+            Combining multilingual communication, program coordination,
+            administrative support, and digital tools to keep work
+            organized, connected, and moving forward.
+        </p>
+
+    </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<dialog id="country-dialog" aria-labelledby="dialog-country">
+    <button id="close-dialog" class="close-dialog" aria-label="Close country details">×</button>
+    <div id="dialog-content"></div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+<script src="src/components/global-experience.js" defer></script>
+
+<script>
+    document.querySelectorAll('.year').forEach(
+        e => e.textContent = new Date().getFullYear()
+    );
+</script>
+
+</body>
+</html>

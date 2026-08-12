@@ -1,0 +1,90 @@
+[
+  {
+    "country": "Qatar",
+    "flag": "qa",
+    "coordinates": [25.2854, 51.5310],
+    "events": [
+
+      
+      {
+        "city": "Doha",
+        "date": "March 2022",
+        "event": "Second Supply Chain Management Conference",
+        "description": "Participated in the exhibition, gaining insights into sustainable agriculture, environmental protection, food security, agricultural innovation, and climate-resilient practices.",
+        "images": ["assets/travel/eventqt2022.jpg"]
+      },
+      {
+        "city": "Doha",
+        "date": "December 2021",
+        "event": "Second Supply Chain Management Conference",
+        "description": "Participated in the conference, about supply chain management, logistics, procurement, operational efficiency, and resilient supply chain practices.",
+        "images": ["assets/travel/eventqt2021.jpg"]
+      }, 
+      {
+        "city": "Doha",
+        "date": "Novembre 2019",
+        "event": "Second Annual Conference on Food Security in Qatar",
+        "description": "Attended the conference and gained insights into food security challenges, sustainable food systems, agricultural development, and strategies to enhance food resilience.",
+        "images": ["assets/travel/eventqa2.jpeg"]
+      },
+      {
+        "city": "Doha",
+        "date": "1–3 July 2018",
+        "event": "Three-day national workshop",
+        "description": "Participated in the workshop, engaging in discussions on desertification, land degradation, sustainable land management, and strategies to address environmental challenges.",
+        "images": ["assets/travel/eventqt2018.png"]
+      }
+    ]
+  },
+  {
+    "country": "Azerbaijan",
+    "city": "Baku",
+    "date": "11–22 November 2024",
+    "event": "COP29",
+    "description": "Participated in a session dedicated to climate finance and the reinforcement of international cooperation mechanisms in support of developing countries' climate action agendas.",
+    "coordinates": [49.8951, 40.4093],
+    "flag": "az",
+    "images": ["assets/travel/eventaz.jpg"]
+  },
+  {
+    "country": "United Arab Emirates",
+    "city": "Dubai",
+    "date": "30 November–13 December 2023",
+    "event": "COP28",
+    "description": "Contributed to a preparatory meeting focused on core negotiation themes, including the Global Stocktake, renewable energy expansion, emissions reduction, climate finance mechanisms, and the global transition away from fossil fuels.",
+    "coordinates": [25.2048, 55.2708],
+    "flag": "ae",
+    "images": ["assets/travel/eventuae.png"]
+  },
+  {
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "date": "31 October–12 November 2021",
+    "event": "COP26",
+    "description": "Participated in preparatory discussions and meetings ahead of COP26, contributing to coordination and engagement on key climate change priorities and international climate action.",
+    "coordinates": [55.8642, -4.2518],
+    "flag": "gb",
+    "images": ["assets/travel/eventUK.jpg"]
+  },
+  {
+    "country": "Egypt",
+    "city": "Sharm El Sheikh",
+    "date": "6–20 November 2022",
+    "event": "COP27",
+    "description": "Participated in preparatory meetings and discussions ahead of COP27, supporting engagement on key climate priorities, adaptation, resilience, climate finance, and international climate action.",
+    "coordinates": [30.0444, 31.2357],
+    "flag": "eg",
+    "images": ["assets/travel/eventeg.png"]
+  },
+  {
+    "country": "Benin",
+    "city": "Cotonou",
+    "date": "5–6 November 2018 ",
+    "event": "Second Session of the Global Dryland Alliance Executive Council",
+    "description": "Participated in the session, which focused on strengthening cooperation among GDA member countries and advancing joint action on food security, climate resilience, and sustainable development in dryland regions.",
+    "coordinates": [6.3703, 2.3912],
+    "flag": "bj",
+    "images": ["assets/travel/eventgda.jpeg"]
+  }
+]
+

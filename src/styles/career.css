@@ -1,0 +1,1354 @@
+/* =========================================================
+   CAREER PAGES (EXPERIENCE + EDUCATION)
+   Shared design system matching the home page visual language
+   ========================================================= */
+
+@import url("./theme.css");
+@import url("./layout.css");
+
+:root {
+    --bg: var(--color-bg);
+    --panel: var(--color-bg-panel);
+    --ink: var(--color-ink);
+    --muted: var(--color-ink-muted);
+    --line: var(--color-line);
+    --accent: var(--color-accent);
+    --warm: var(--color-accent-warm);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 Inter, Arial, sans-serif;
+    transition: background-color var(--transition-medium), color var(--transition-medium), border-color var(--transition-medium);
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.career-page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 80px 24px 110px;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.career-hero {
+    position: relative;
+    padding: 25px 0 100px;
+}
+
+.career-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.eyebrow-line {
+    width: 35px;
+    height: 1px;
+    background: var(--warm);
+}
+
+.career-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, .7fr);
+    align-items: center;
+    gap: 70px;
+}
+
+.career-hero-copy {
+    padding-top: 25px;
+}
+
+.career-title {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: .92;
+    letter-spacing: -.055em;
+    color: var(--ink);
+}
+
+.career-title span {
+    display: block;
+
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent);
+    opacity: .9;
+}
+
+.career-intro {
+    max-width: 650px;
+
+    margin: 32px 0 0;
+
+    color: var(--muted);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    line-height: 1.75;
+}
+
+.career-intro + .career-intro {
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   HERO ORBIT
+   ========================================================= */
+
+.career-orbit {
+    position: relative;
+
+    width: 360px;
+    height: 360px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: careerOrbitFloat 6s ease-in-out infinite;
+}
+
+.career-orbit .orbit {
+    position: absolute;
+
+    border: 1px solid rgba(31, 92, 82, .22);
+    border-radius: 50%;
+}
+
+.career-orbit .orbit-one {
+    width: 300px;
+    height: 300px;
+
+    border-style: dashed;
+
+    animation: careerOrbitOneSpin 20s linear infinite;
+}
+
+.career-orbit .orbit-two {
+    width: 360px;
+    height: 360px;
+
+    border-color: rgba(201, 138, 62, .18);
+
+    animation: careerOrbitTwoSpin 28s linear infinite;
+}
+
+.career-orbit .orbit-three {
+    width: 235px;
+    height: 235px;
+
+    border-color: rgba(80, 119, 164, .25);
+    border-style: dotted;
+
+    animation: careerOrbitThreeSpin 14s linear infinite;
+}
+
+.orbit-center {
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(201, 138, 62, .18),
+            transparent 55%
+        ),
+        var(--panel);
+
+    border: 1px solid var(--line);
+
+    box-shadow:
+        0 0 0 12px rgba(31, 92, 82, .025),
+        0 15px 45px rgba(0, 0, 0, .08);
+
+    animation: careerOrbitCenterGlow 3.5s ease-in-out infinite;
+}
+
+.orbit-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.orbit-center .orbit-label {
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.career-orbit .orbit-dot {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 0 5px rgba(31, 92, 82, .08),
+        0 0 20px rgba(31, 92, 82, .25);
+
+    animation: careerDotPulse 2.6s ease-in-out infinite;
+}
+
+.career-orbit .dot-one {
+    top: 40px;
+    right: 76px;
+}
+
+.career-orbit .dot-two {
+    bottom: 64px;
+    left: 32px;
+
+    background: var(--warm);
+
+    box-shadow:
+        0 0 0 5px rgba(201, 138, 62, .08),
+        0 0 20px rgba(201, 138, 62, .25);
+
+    animation-delay: .8s;
+}
+
+.career-orbit .dot-three {
+    top: 162px;
+    right: -5px;
+
+    width: 6px;
+    height: 6px;
+
+    animation-delay: 1.6s;
+}
+
+
+@keyframes careerOrbitOneSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes careerOrbitTwoSpin {
+    0% { transform: rotate(360deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.06); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes careerOrbitThreeSpin {
+    0% { transform: rotate(360deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.08); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes careerOrbitFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+
+@keyframes careerOrbitCenterGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 0 12px rgba(31, 92, 82, .025),
+            0 15px 45px rgba(0, 0, 0, .08);
+    }
+    50% {
+        box-shadow:
+            0 0 0 18px rgba(31, 92, 82, .06),
+            0 15px 55px rgba(0, 0, 0, .14);
+    }
+}
+
+@keyframes careerDotPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.6); opacity: .6; }
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.career-section {
+    margin-top: 110px;
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 1fr minmax(250px, 430px);
+    align-items: end;
+    gap: 40px;
+
+    margin-bottom: 40px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading > div {
+    position: relative;
+}
+
+.section-number {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--warm);
+
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -.025em;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TIMELINE RAIL
+   ========================================================= */
+
+.career-timeline {
+    position: relative;
+
+    display: grid;
+    gap: 16px;
+}
+
+.career-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 30px;
+    bottom: 30px;
+    left: 54px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(31, 92, 82, .18) 8%,
+            rgba(31, 92, 82, .18) 92%,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CAREER CARDS
+   ========================================================= */
+
+.career-card {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.career-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    top: -100px;
+    right: -75px;
+
+    border-radius: 50%;
+
+    background: rgba(31, 92, 82, .08);
+
+    transition: transform .6s ease;
+}
+
+.career-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(31, 92, 82, .4);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.career-card:hover::before {
+    transform: scale(1.5);
+}
+
+/* left rail (index + date) */
+.career-rail {
+    padding: 28px 0 28px 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.career-index {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: rgba(31, 92, 82, .08);
+
+    border: 1px solid rgba(31, 92, 82, .18);
+
+    color: var(--accent);
+
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        border-color .4s ease;
+}
+
+.career-card:hover .career-index {
+    transform: scale(1.08);
+
+    background: rgba(31, 92, 82, .14);
+
+    border-color: rgba(31, 92, 82, .35);
+}
+
+.career-date {
+    position: relative;
+    z-index: 1;
+
+    color: var(--warm);
+
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+    line-height: 1.5;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    text-align: center;
+
+    margin: 0 auto;
+}
+
+/* right content */
+.career-body {
+    position: relative;
+
+    padding: 28px 28px 28px 0;
+
+    min-width: 0;
+}
+
+.career-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.career-logo {
+    flex-shrink: 0;
+
+    width: 120px;
+    height: 80px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(31, 92, 82, .2);
+    background: linear-gradient(135deg, rgba(31, 92, 82, .1), rgba(201, 138, 62, .08));
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.4);
+}
+
+.career-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.career-logo--square {
+    width: 80px;
+    height: 80px;
+}
+
+.career-meta {
+    min-width: 0;
+    flex: 1;
+}
+
+.career-title-role {
+    margin: 0 0 4px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+    line-height: 1.15;
+}
+
+.career-org {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.career-desc {
+    position: relative;
+
+    margin-top: 20px;
+}
+
+.career-desc ul {
+    margin: 0;
+    padding-left: 20px;
+
+    display: grid;
+    gap: 8px;
+}
+
+.career-desc li {
+    font-size: .92rem;
+    line-height: 1.7;
+    color: var(--ink);
+}
+
+.career-desc li::marker {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   EDUCATION CARDS
+   ========================================================= */
+
+.education-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.education-card {
+    position: relative;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.education-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    bottom: -100px;
+    left: -75px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 138, 62, .08);
+
+    transition: transform .6s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(201, 138, 62, .4);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.education-card:hover::before {
+    transform: scale(1.5);
+}
+
+.education-top {
+    position: relative;
+    z-index: 1;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    width: 150px;
+}
+
+.education-logo {
+    flex-shrink: 0;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 18px;
+    border: 1px solid rgba(201, 138, 62, .25);
+    background: linear-gradient(135deg, rgba(201, 138, 62, .12), rgba(31, 92, 82, .08));
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.4);
+
+    transition: transform .5s ease;
+}
+
+.education-card:hover .education-logo {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.education-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.education-date {
+    color: var(--warm);
+
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-align: center;
+}
+
+.education-meta {
+    position: relative;
+    z-index: 1;
+
+    min-width: 0;
+    flex: 1;
+}
+
+.education-index {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--warm);
+
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+}
+
+.education-degree {
+    margin: 0 0 8px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+    line-height: 1.2;
+}
+
+.education-school {
+    margin: 0 0 10px;
+
+    color: var(--muted);
+    font-size: .92rem;
+}
+
+.education-desc {
+    margin: 12px 0 0;
+    padding-top: 12px;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.7;
+}
+
+.education-desc p {
+    margin: 0;
+}
+
+/* training entry stamp */
+.education-stamp {
+    flex-shrink: 0;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 18px;
+    border: 1px solid rgba(31, 92, 82, .25);
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(201, 138, 62, .18),
+            transparent 55%
+        ),
+        linear-gradient(135deg, rgba(31, 92, 82, .1), rgba(201, 138, 62, .08));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.4);
+
+    transition: transform .5s ease;
+}
+
+.education-stamp span {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: var(--accent);
+}
+
+.education-card--training {
+    border-color: rgba(31, 92, 82, .3);
+}
+
+.education-card--training::before {
+    background: rgba(31, 92, 82, .08);
+}
+
+.education-card--training:hover {
+    border-color: rgba(31, 92, 82, .4);
+}
+
+.education-card--training:hover .education-stamp {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+
+/* =========================================================
+   STATS STRIP
+   ========================================================= */
+
+.career-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.stat-chip {
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform .4s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.stat-chip:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(31, 92, 82, .35);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-value {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--accent);
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: .8rem;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SECTION LINK
+   ========================================================= */
+
+.section-link {
+    margin: 24px 0 0;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.section-link a {
+    color: var(--accent);
+    text-decoration: none;
+
+    transition: color .3s ease;
+}
+
+.section-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.career-closing {
+    position: relative;
+
+    margin-top: 130px;
+
+    padding: 75px 10px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--line);
+}
+
+.closing-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-bottom: 28px;
+}
+
+.closing-decoration span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+}
+
+.closing-decoration span:nth-child(2) {
+    background: var(--warm);
+    transform: scale(1.5);
+}
+
+.closing-label {
+    margin: 0 0 12px;
+
+    color: var(--accent);
+
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.career-closing h2 {
+    max-width: 800px;
+
+    margin: auto;
+
+    font-family: Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: .95;
+    letter-spacing: -.04em;
+}
+
+.career-closing h2 span {
+    display: block;
+
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent);
+}
+
+.closing-text {
+    max-width: 600px;
+
+    margin: 28px auto 0;
+
+    color: var(--muted);
+
+    font-size: .95rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   STAGGER ANIMATIONS
+   ========================================================= */
+
+.career-card,
+.education-card,
+.stat-chip {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.reveal.visible .career-card,
+.reveal.visible .education-card,
+.reveal.visible .stat-chip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.career-card:nth-child(1),
+.education-card:nth-child(1),
+.stat-chip:nth-child(1) {
+    transition-delay: .05s;
+}
+
+.career-card:nth-child(2),
+.education-card:nth-child(2),
+.stat-chip:nth-child(2) {
+    transition-delay: .12s;
+}
+
+.career-card:nth-child(3),
+.education-card:nth-child(3),
+.stat-chip:nth-child(3) {
+    transition-delay: .19s;
+}
+
+.career-card:nth-child(4) {
+    transition-delay: .26s;
+}
+
+.career-card:nth-child(5) {
+    transition-delay: .33s;
+}
+
+.career-card:nth-child(6) {
+    transition-delay: .40s;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .career-page {
+        padding-top: 60px;
+    }
+
+    .career-hero {
+        padding-bottom: 15px;
+    }
+
+    .career-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .career-orbit {
+        width: 300px;
+        height: 300px;
+    }
+
+    .career-orbit .orbit-one {
+        width: 230px;
+        height: 230px;
+    }
+
+    .career-orbit .orbit-two {
+        width: 300px;
+        height: 300px;
+    }
+
+    .career-orbit .orbit-three {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orbit-center {
+        width: 120px;
+        height: 120px;
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .career-timeline::before {
+        display: none;
+    }
+
+    .career-card {
+        grid-template-columns: 1fr;
+    }
+
+    .career-rail {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 18px;
+
+        padding: 24px 24px 0;
+    }
+
+    .career-date {
+        writing-mode: horizontal-tb;
+        transform: none;
+
+        margin: 0;
+    }
+
+    .career-body {
+        padding: 24px;
+    }
+
+    .career-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .career-section {
+        margin-top: 55px;
+    }
+
+    .career-closing {
+        margin-top: 70px;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .career-page {
+        padding: 24px 16px 50px;
+    }
+
+    .career-hero {
+        padding-top: 6px;
+        padding-bottom: 0;
+    }
+
+    .career-title {
+        font-size: clamp(3.1rem, 16vw, 5rem);
+    }
+
+    .career-intro {
+        margin-top: 18px;
+        font-size: .95rem;
+    }
+
+    .career-orbit {
+        width: 240px;
+        height: 240px;
+
+        margin-top: -20px;
+    }
+
+    .career-orbit .orbit-one {
+        width: 180px;
+        height: 180px;
+    }
+
+    .career-orbit .orbit-two {
+        width: 240px;
+        height: 240px;
+    }
+
+    .career-orbit .orbit-three {
+        width: 140px;
+        height: 140px;
+    }
+
+    .orbit-center {
+        width: 95px;
+        height: 95px;
+    }
+
+    .career-orbit .dot-one {
+        top: 25px;
+        right: 50px;
+    }
+
+    .career-orbit .dot-two {
+        bottom: 40px;
+        left: 18px;
+    }
+
+    .career-section {
+        margin-top: 40px;
+    }
+
+    .section-heading {
+        margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .section-heading p {
+        font-size: .88rem;
+    }
+
+    .career-card,
+    .education-card {
+        border-radius: 18px;
+    }
+
+    .career-card {
+        grid-template-columns: 1fr;
+    }
+
+    .career-rail {
+        padding: 20px 20px 0;
+    }
+
+    .career-index {
+        width: 44px;
+        height: 44px;
+    }
+
+    .career-body {
+        padding: 20px;
+    }
+
+    .career-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .career-logo {
+        width: 100px;
+        height: 70px;
+    }
+
+    .career-logo--square {
+        width: 70px;
+        height: 70px;
+    }
+
+    .career-title-role {
+        font-size: 1.4rem;
+    }
+
+    .career-desc {
+        margin-top: 16px;
+    }
+
+    .career-desc li {
+        font-size: .88rem;
+    }
+
+    .career-stats {
+        gap: 10px;
+    }
+
+    .stat-chip {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .education-card {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 22px;
+    }
+
+    .education-top {
+        width: 100%;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    .education-logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .education-stamp {
+        width: 90px;
+        height: 90px;
+    }
+
+    .education-stamp span {
+        font-size: 24px;
+    }
+
+    .education-date {
+        text-align: left;
+    }
+
+    .education-degree {
+        font-size: 1.35rem;
+    }
+
+    .career-closing {
+        margin-top: 48px;
+        padding-top: 40px;
+    }
+
+    .career-closing h2 {
+        font-size: 2.8rem;
+    }
+
+    .closing-text {
+        font-size: .88rem;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .career-card,
+    .education-card,
+    .stat-chip {
+        opacity: 1;
+        transform: none;
+    }
+
+}

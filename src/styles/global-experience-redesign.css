@@ -1,0 +1,599 @@
+/* =========================================================
+   GLOBAL EXPERIENCE PAGE
+   Matches the home page design system while preserving
+   the interactive globe experience
+   ========================================================= */
+
+@import url("./career.css");
+
+/* =========================================================
+   GLOBE SECTION (dark panel within light design system)
+   ========================================================= */
+
+.globe-section {
+    position: relative;
+
+    margin-top: 110px;
+
+    padding: 30px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: 22px;
+
+    box-shadow: var(--shadow-card);
+
+    overflow: hidden;
+}
+
+.globe-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -130px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(31, 92, 82, .08);
+
+    pointer-events: none;
+}
+
+.globe-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    bottom: -100px;
+    left: -75px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 138, 62, .08);
+
+    pointer-events: none;
+}
+
+.globe-frame {
+    position: relative;
+    z-index: 1;
+
+    height: min(70vh, 680px);
+    min-height: 460px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(31, 92, 82, .18),
+            transparent 60%
+        ),
+        linear-gradient(
+            160deg,
+            #0c272e 0%,
+            #071c22 48%,
+            #051419 100%
+        );
+
+    border: 1px solid rgba(31, 92, 82, .3);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06),
+        0 15px 40px rgba(0, 0, 0, .18);
+}
+
+#globe {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.status {
+    position: absolute;
+
+    bottom: 16px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    background: rgba(5, 20, 25, .72);
+
+    border: 1px solid rgba(221, 236, 231, .16);
+
+    color: var(--color-global-muted);
+
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+
+    white-space: nowrap;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   VISIT LIST
+   ========================================================= */
+
+.visit-list {
+    margin-top: 110px;
+}
+
+.visit-list-heading {
+    display: grid;
+    grid-template-columns: 1fr minmax(250px, 430px);
+    align-items: end;
+    gap: 40px;
+
+    margin-bottom: 40px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.visit-list-heading > div {
+    position: relative;
+}
+
+.visit-list-heading h2 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -.025em;
+}
+
+.visit-list-heading p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+.visit-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.visit-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 14px;
+
+    border: 1px solid var(--line);
+    border-radius: 999px;
+
+    color: var(--ink);
+
+    background: transparent;
+
+    font-size: .84rem;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease;
+}
+
+.visit-button:hover,
+.visit-button:focus-visible {
+    transform: translateY(-4px);
+
+    border-color: var(--accent);
+
+    background: rgba(31, 92, 82, .07);
+
+    color: var(--accent);
+}
+
+.visit-button .country-flag {
+    width: 20px;
+    height: 15px;
+
+    object-fit: cover;
+
+    border-radius: 3px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DIALOG
+   ========================================================= */
+
+dialog {
+    width: min(520px, calc(100% - 32px));
+
+    padding: 0;
+
+    border: 1px solid rgba(31, 92, 82, .3);
+    border-radius: 22px;
+
+    background: var(--panel);
+
+    color: var(--ink);
+
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
+}
+
+dialog::backdrop {
+    background: rgba(5, 20, 25, .72);
+
+    backdrop-filter: blur(4px);
+}
+
+.close-dialog {
+    position: absolute;
+
+    right: 14px;
+    top: 12px;
+
+    z-index: 20;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    background: var(--panel);
+
+    color: var(--ink);
+
+    font-size: 22px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.close-dialog:hover {
+    transform: scale(1.08);
+
+    border-color: var(--accent);
+
+    background: rgba(31, 92, 82, .08);
+}
+
+.country-card {
+    padding: 28px;
+}
+
+.country-card .eyebrow {
+    margin: 0 0 8px;
+
+    color: var(--accent);
+
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.country-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 4px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.1;
+}
+
+.country-card h2 .country-flag {
+    width: 34px;
+    height: 24px;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+
+    flex-shrink: 0;
+}
+
+.country-meta {
+    margin: 0;
+
+    color: var(--warm);
+
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+}
+
+.country-meta-line {
+    margin-top: 6px;
+
+    line-height: 1.5;
+}
+
+.country-meta-line strong {
+    color: var(--ink);
+}
+
+.country-description {
+    margin: 14px 0 0;
+
+    color: var(--muted);
+
+    font-size: .92rem;
+    line-height: 1.7;
+}
+
+.country-image {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--line);
+
+    box-shadow: var(--shadow-card);
+
+    margin-top: 18px;
+}
+
+.image-count {
+    color: var(--muted);
+
+    font-size: .8rem;
+}
+
+
+/* =========================================================
+   CAROUSEL
+   ========================================================= */
+
+.country-carousel {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+.country-events-track {
+    display: flex;
+
+    gap: 20px;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+}
+
+.country-events-track .country-event-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+
+    scroll-snap-align: start;
+
+    box-sizing: border-box;
+}
+
+.carousel-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background: var(--panel);
+
+    color: var(--ink);
+
+    font-size: 20px;
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+    border-color: var(--accent);
+
+    background: rgba(31, 92, 82, .08);
+
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow:disabled {
+    opacity: .25;
+
+    cursor: default;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .visit-list-heading {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .globe-section {
+        margin-top: 40px;
+    }
+
+    .globe-frame {
+        height: 58vh;
+        min-height: 400px;
+    }
+
+    .visit-list {
+        margin-top: 40px;
+    }
+
+    .career-closing {
+        margin-top: 70px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .globe-section {
+        padding: 12px;
+
+        border-radius: 18px;
+    }
+
+    .globe-frame {
+        height: 46vh;
+        min-height: 320px;
+
+        border-radius: 14px;
+    }
+
+    .status {
+        bottom: 12px;
+
+        font-size: 10px;
+
+        white-space: normal;
+
+        text-align: center;
+
+        max-width: calc(100% - 32px);
+    }
+
+    .visit-list-heading h2 {
+        font-size: 2rem;
+    }
+
+    .visit-list-heading p {
+        font-size: .88rem;
+    }
+
+    .visit-buttons {
+        gap: 7px;
+    }
+
+    .visit-button {
+        padding: 9px 11px;
+        font-size: .78rem;
+    }
+
+    .country-card {
+        padding: 22px;
+    }
+
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+
+        font-size: 18px;
+    }
+
+    .country-events-track {
+        gap: 10px;
+    }
+
+    .country-events-track .country-event-card {
+        flex-basis: 100%;
+        min-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .visit-button {
+        opacity: 1;
+        transform: none;
+    }
+
+}
