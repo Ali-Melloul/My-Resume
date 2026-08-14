@@ -1,0 +1,168 @@
+.site-nav {
+  background: var(--color-nav-surface);
+  color: var(--color-ink);
+  border-bottom-color: var(--color-line);
+}
+
+.site-nav .name,
+.site-nav .nav-links a,
+.site-nav .theme-toggle,
+.site-footer,
+.site-footer .wrap,
+.site-footer .record-marker .label,
+.site-footer .copyright,
+.site-footer .site-footer-links a {
+  color: var(--color-ink);
+}
+
+.site-footer {
+  background: var(--color-bg);
+  border-top-color: var(--color-line);
+}
+
+.site-footer .site-footer-links a {
+  background: var(--color-bg-panel);
+  border-color: var(--color-line);
+}
+
+.site-footer .site-footer-links .ico {
+  color: var(--color-accent);
+}
+
+.visit-button {
+  background: var(--color-global-surface);
+  color: var(--color-global-accent);
+  border-color: var(--color-global-line);
+}
+
+.visit-button:hover,
+.visit-button:focus-visible {
+  background: var(--color-surface-elevated);
+  border-color: var(--color-global-accent);
+  color: var(--color-global-accent);
+}
+
+.country-card {
+  background: var(--color-global-card);
+  color: var(--color-ink-contry-card);
+  border-color: var(--color-global-dialog-border);
+  box-shadow: 0 20px 45px var(--color-global-card-strong);
+}
+
+.country-card .eyebrow,
+.country-card .country-meta {
+  color: var(--color-global-accent);
+}
+
+.country-card .country-meta-line {
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.country-card .country-meta-line strong {
+  color: var(--color-ink);
+}
+
+.country-card .country-description,
+.country-card .image-count {
+  color: var(--color-global-muted);
+}
+
+.country-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.country-events-track {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.country-events-track .country-event-card {
+  flex: 0 0 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+
+/* Arrow buttons */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+
+  font-size: 22px;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.85);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.country-card {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+dialog {
+  overflow: hidden;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .country-events-track {
+    gap: 10px;
+  }
+
+  .country-events-track .country-event-card {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
+}
